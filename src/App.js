@@ -5,28 +5,32 @@ import "./App.css";
 import HoverCounter from "./RenderPropComponent/HoverCounter";
 import Counter from "./RenderPropComponent/Counter";
 import ButtonCounter from "./RenderPropComponent/ButtonCounter";
+import ComponentA from "./ContextExample/ComponentA";
 
 function App() {
   return (
-    <div className="App">
-      <Counter
-        render={(count, fun) => {
-          return <HoverCounter count={count} handleIncrement={() => fun()} />;
-        }}
-      />
-      <Counter
-        render={(count, fun) => {
-          return (
-            <ButtonCounter
-              count={count}
-              handleIncrement={() => {
-                fun();
-              }}
-            />
-          );
-        }}
-      />
-    </div>
+    <>
+      <ComponentA />
+    </>
+    // <div className="App">
+    //   <Counter
+    //     render={(count, fun) => {
+    //       return <HoverCounter count={count} handleIncrement={() => fun()} />;
+    //     }}
+    //   />
+    //   <Counter
+    //     render={(count, fun) => {
+    //       return (
+    //         <ButtonCounter
+    //           count={count}
+    //           handleIncrement={() => {
+    //             fun();
+    //           }}
+    //         />
+    //       );
+    //     }}
+    //   />
+    // </div>
   );
 }
 
